@@ -94,6 +94,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .scroll-hint{position:absolute;bottom:72px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:5px;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.5);opacity:.7;pointer-events:none;z-index:2}
 .scroll-line{width:1px;height:30px;background:linear-gradient(to bottom,rgba(255,255,255,.6),transparent);animation:sline 1.8s ease-in-out infinite}
 @keyframes sline{0%,100%{opacity:.4;transform:scaleY(.6)}50%{opacity:1;transform:scaleY(1)}}
+@media (max-height: 760px) {
+  .scroll-hint { display: none; }
+  .hero { padding-top: 80px; padding-bottom: 40px; }
+}
+@media (max-height: 640px) {
+  .slide-dots { display: none; }
+  .hero-headline { font-size: clamp(2rem, 4vw, 3rem); }
+}
 
 /* ── STRIP ── */
 .strip{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:13px 6vw;display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap}
@@ -109,6 +117,8 @@ section{padding:86px 6vw}
 .stag-p{background:var(--purple-s);color:var(--purple)}
 .stag-k{background:#f0efec;color:var(--ink2)}
 .section-title{font-family:'Manrope',sans-serif;font-weight:800;font-size:clamp(1.75rem,3.4vw,2.6rem);letter-spacing:-.8px;line-height:1.15;color:var(--ink);margin-bottom:12px}
+.section-title em{font-style:normal;color:var(--accent);font-weight:800;letter-spacing:-1px;position:relative;display:inline-block}
+.section-title em::after{content:'';position:absolute;bottom:2px;left:0;right:0;height:4px;background:var(--accent);opacity:.15;z-index:-1}
 .section-body{font-size:.97rem;line-height:1.8;color:var(--muted);max-width:560px}
 
 /* ── PROBLEM ── */
@@ -156,6 +166,7 @@ section{padding:86px 6vw}
 
 /* product illustration */
 .pc-illustration{display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 8px 16px rgba(0,0,0,.10));transition:transform .4s ease}
+.pc-illustration img{width:110px;height:110px;object-fit:contain}
 .product-card:hover .pc-illustration{transform:scale(1.1) translateY(-4px)}
 
 /* "Coming Soon" ribbon */
@@ -470,9 +481,9 @@ footer{background:var(--ink);padding:24px 6vw;display:flex;align-items:center;ju
 
   <!-- Background image layers — one per slide -->
   <div class="hero-bg active" id="bg0" style="background-image:url('https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=1600&auto=format&fit=crop&q=80')"></div>
-  <div class="hero-bg" id="bg1" style="background-image:url('https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=1600&auto=format&fit=crop&q=80')"></div>
+  <div class="hero-bg" id="bg1" style="background-image:url('https://images.pexels.com/photos/1712/sunglasses-apple-iphone-desk.jpg?_gl=1*5coog8*_ga*MjEyODcyMjUxOC4xNzcxMjMwOTQy*_ga_8JE65Q40S6*czE3NzI1MTQwMTYkbzgkZzEkdDE3NzI1MTQzNTgkajU5JGwwJGgw')"></div>
   <div class="hero-bg" id="bg2" style="background-image:url('https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1600&auto=format&fit=crop&q=80')"></div>
-  <div class="hero-bg" id="bg3" style="background-image:url('https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=1600&auto=format&fit=crop&q=80')"></div>
+  <div class="hero-bg" id="bg3" style="background-image:url('https://images.pexels.com/photos/8689409/pexels-photo-8689409.jpeg?_gl=1*hrj6hr*_ga*MjEyODcyMjUxOC4xNzcxMjMwOTQy*_ga_8JE65Q40S6*czE3NzI1MTQwMTYkbzgkZzEkdDE3NzI1MTQxNDQkajQxJGwwJGgw')"></div>
   <div class="hero-bg" id="bg4" style="background-image:url('https://images.unsplash.com/photo-1601758124510-52d02ddb7cbd?w=1600&auto=format&fit=crop&q=80')"></div>
 
   <div class="hero-overlay"></div>
@@ -551,18 +562,18 @@ footer{background:var(--ink);padding:24px 6vw;display:flex;align-items:center;ju
 
     <div class="products-grid">
 
-      <!-- Dolphin Smart Tracker -->
+      <!-- Dolphin Pro Tracker -->
       <div class="product-card reveal">
         <div class="pc-img pc-img-dolphin">
-          <span class="pc-ribbon ribbon-featured">★ Featured</span>
+          <span class="pc-ribbon ribbon-featured">Coming Soon</span>
           <div class="pc-illustration">
-            <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#2a7abf" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M4.93 4.93l14.14 14.14"/><circle cx="12" cy="12" r="3"/></svg>
+            <img src="pngs/dolphin pro tracker.png" alt="Dolphin Pro Tracker">
           </div>
         </div>
         <div class="pc-body">
           <div class="pc-category">Bluetooth Tracker</div>
-          <div class="pc-name">Dolphin Smart Tracker</div>
-          <div class="pc-desc">Track keys, bags & essentials. View last-seen location and get separation alerts on your phone.</div>
+          <div class="pc-name">Dolphin Pro Tracker</div>
+          <div class="pc-desc">Our most powerful tracker yet. Long-range precision tracking with a sleek, durable design for your most valuable items.</div>
           <div class="pc-footer">
             <div class="pc-price">
               <div class="pc-price-label">Early Access</div>
@@ -573,73 +584,73 @@ footer{background:var(--ink);padding:24px 6vw;display:flex;align-items:center;ju
         </div>
       </div>
 
-      <!-- Luggage Tags -->
+      <!-- Dolphin Tracker Sleek -->
       <div class="product-card reveal d1">
         <div class="pc-img pc-img-luggage">
-          <span class="pc-ribbon ribbon-new">New</span>
+          <span class="pc-ribbon ribbon-new">Coming Soon</span>
           <div class="pc-illustration">
-            <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#b07d2a" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="7" width="12" height="15" rx="1"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+            <img src="pngs/dolphing tracker sleek.png" alt="Dolphin Tracker Sleek">
           </div>
         </div>
         <div class="pc-body">
-          <div class="pc-category">QR Security Tag</div>
-          <div class="pc-name">Smart Bag & Luggage Tag</div>
-          <div class="pc-desc">QR-enabled recovery tag — anyone who finds your item can scan to return it. No app needed.</div>
+          <div class="pc-category">Slim Tracker</div>
+          <div class="pc-name">Dolphin Tracker Sleek</div>
+          <div class="pc-desc">Ultra-thin design that fits perfectly in wallets or attaches to slim devices. Never lose your essentials again.</div>
           <div class="pc-footer">
             <div class="pc-price">
               <div class="pc-price-label">Early Access</div>
               <div class="pc-price-val">Coming Soon</div>
             </div>
-            <button class="pc-notify" onclick="notifyMe(this,'luggage')">Notify Me</button>
+            <button class="pc-notify" onclick="notifyMe(this,'sleek')">Notify Me</button>
           </div>
         </div>
       </div>
 
-      <!-- Eyewear & Wallet -->
+      <!-- Dolphin Tracker Rex -->
       <div class="product-card reveal d2">
         <div class="pc-img pc-img-eyewear">
           <span class="pc-ribbon ribbon-soon">Coming Soon</span>
           <div class="pc-illustration">
-            <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#0f7a72" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="14" r="3"/><circle cx="18" cy="14" r="3"/><path d="M9 14h6"/><path d="M3 14a9 9 0 0 1 9-9 9 9 0 0 1 9 9"/></svg>
+            <img src="pngs/dolphing tracker rex.png" alt="Dolphin Tracker Rex">
           </div>
         </div>
         <div class="pc-body">
-          <div class="pc-category">Micro Tracker</div>
-          <div class="pc-name">Eyewear & Wallet Tracker</div>
-          <div class="pc-desc">Lightweight, ultra-discreet trackers. Never waste time searching for your glasses or wallet again.</div>
+          <div class="pc-category">Rugged Tracker</div>
+          <div class="pc-name">Dolphin Tracker Rex</div>
+          <div class="pc-desc">Built for the outdoors. Water-resistant and shock-proof, the Rex is the ultimate companion for your gear and adventures.</div>
           <div class="pc-footer">
             <div class="pc-price">
               <div class="pc-price-label">Early Access</div>
               <div class="pc-price-val">Coming Soon</div>
             </div>
-            <button class="pc-notify" onclick="notifyMe(this,'eyewear')">Notify Me</button>
+            <button class="pc-notify" onclick="notifyMe(this,'rex')">Notify Me</button>
           </div>
         </div>
       </div>
 
-      <!-- Pet Tags -->
+      <!-- Genie Track Collar -->
       <div class="product-card reveal d3">
         <div class="pc-img pc-img-pet">
-          <span class="pc-ribbon ribbon-new">New</span>
+          <span class="pc-ribbon ribbon-new">Coming Soon</span>
           <div class="pc-illustration">
-            <svg width="72" height="72" viewBox="0 0 24 24" fill="none" stroke="#9d2a72" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.703 1.725 1.722 3.656 1 1.261-.472 1.96-1.45 2.344-2.5"/><path d="M14.267 5.172c0-1.39 1.577-2.493 3.5-2.172 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.96-1.45-2.344-2.5"/><path d="M8 14v.5"/><path d="M16 14v.5"/><path d="M11.25 16.25h1.5L12 17l-.75-.75z"/><path d="M4.42 11.247A13.152 13.152 0 0 0 4 14.556C4 18.728 7.582 21 12 21s8-2.272 8-6.444c0-1.061-.162-2.2-.493-3.309m-9.243-6.082A8.801 8.801 0 0 1 12 5c.78 0 1.5.108 2.161.306"/></svg>
+            <img src="pngs/Genie Track Collar Android Green.png" alt="Genie Track Collar">
           </div>
         </div>
         <div class="pc-body">
           <div class="pc-category">Pet Safety</div>
-          <div class="pc-name">Pet Safety & ID Tag</div>
-          <div class="pc-desc">Keep pets identifiable & connected. Quick profile updates + recovery assistance when they wander.</div>
+          <div class="pc-name">Genie Track Collar</div>
+          <div class="pc-desc">Keep your furry friends safe with real-time location tracking and activity monitoring. Designed for comfort and durability.</div>
           <div class="pc-footer">
             <div class="pc-price">
               <div class="pc-price-label">Early Access</div>
               <div class="pc-price-val">Coming Soon</div>
             </div>
-            <button class="pc-notify" onclick="notifyMe(this,'pet')">Notify Me</button>
+            <button class="pc-notify" onclick="notifyMe(this,'genie')">Notify Me</button>
           </div>
         </div>
       </div>
 
-      <!-- More Products — wide card -->
+      <!-- More Products — wide card >
       <div class="product-card product-card-wide reveal d4">
         <div class="pc-img pc-img-more pc-img-wide">
           <span class="pc-ribbon ribbon-soon">More Categories</span>
@@ -661,7 +672,7 @@ footer{background:var(--ink);padding:24px 6vw;display:flex;align-items:center;ju
             <button class="pc-notify" onclick="document.getElementById('signup').scrollIntoView({behavior:'smooth'})">See All Products</button>
           </div>
         </div>
-      </div>
+      </div-->
 
     </div>
   </div>
@@ -718,7 +729,7 @@ footer{background:var(--ink);padding:24px 6vw;display:flex;align-items:center;ju
 <section class="introducing">
   <div class="max reveal">
     <div class="stag stag-t">The Solution</div>
-    <h2 class="section-title">Introducing Introverted Tech</h2>
+    <h2 class="section-title">Introducing <em>Introverted Tech</em></h2>
     <p class="section-body" style="margin:0 auto">A powerful range of Bluetooth and QR-enabled tracking products built for real-world everyday use. Simple to set up. Easy to use. Designed for modern lifestyles.</p>
     <div class="intro-pills">
       <div class="pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><path d="M4.93 4.93l14.14 14.14"/></svg> Bluetooth Tracking</div>
@@ -771,10 +782,10 @@ footer{background:var(--ink);padding:24px 6vw;display:flex;align-items:center;ju
         <input class="sc-input" id="scCity" type="text" placeholder="Your city or country">
         <div class="sc-products-label">Products you're interested in <span style="opacity:.45;font-size:.75rem">(select all that apply)</span></div>
         <div class="sc-products-grid">
-          <label class="sc-product-check"><input type="checkbox" value="Dolphin Smart Tracker" checked><span>Dolphin Tracker</span></label>
-          <label class="sc-product-check"><input type="checkbox" value="Luggage Tag"><span>Luggage Tag</span></label>
-          <label class="sc-product-check"><input type="checkbox" value="Eyewear & Wallet Tracker"><span>Eyewear Tracker</span></label>
-          <label class="sc-product-check"><input type="checkbox" value="Pet Safety Tag"><span>Pet Safety Tag</span></label>
+          <label class="sc-product-check"><input type="checkbox" value="Dolphin Pro Tracker" checked><span>Dolphin Pro</span></label>
+          <label class="sc-product-check"><input type="checkbox" value="Dolphin Tracker Sleek"><span>Dolphin Sleek</span></label>
+          <label class="sc-product-check"><input type="checkbox" value="Dolphin Tracker Rex"><span>Dolphin Rex</span></label>
+          <label class="sc-product-check"><input type="checkbox" value="Genie Track Collar"><span>Genie Collar</span></label>
           <label class="sc-product-check"><input type="checkbox" value="Passport & Travel Kit"><span>Travel Kit</span></label>
           <label class="sc-product-check"><input type="checkbox" value="Home Security Kit"><span>Home Kit</span></label>
         </div>
@@ -960,10 +971,10 @@ footer{background:var(--ink);padding:24px 6vw;display:flex;align-items:center;ju
 
   // ── PRODUCT LIST FOR MODAL ──
   const ALL_PRODUCTS = [
-    { id: 'dolphin',  name: 'Dolphin Tracker',    icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2a7abf" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><circle cx="12" cy="12" r="3"/></svg>`, bg: '#e3f2fd' },
-    { id: 'luggage',  name: 'Luggage Tag',         icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b07d2a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="7" width="12" height="15" rx="1"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>`, bg: '#fff8e1' },
-    { id: 'eyewear',  name: 'Eyewear Tracker',     icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f7a72" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="14" r="3"/><circle cx="18" cy="14" r="3"/><path d="M9 14h6"/></svg>`, bg: '#e0f7f4' },
-    { id: 'pet',      name: 'Pet Safety Tag',      icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9d2a72" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.703 1.725 1.722 3.656 1 1.261-.472 1.96-1.45 2.344-2.5"/><path d="M14.267 5.172c0-1.39 1.577-2.493 3.5-2.172 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.96-1.45-2.344-2.5"/></svg>`, bg: '#fce4ec' },
+    { id: 'dolphin',  name: 'Dolphin Pro Tracker', icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2a7abf" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2z"/><circle cx="12" cy="12" r="3"/></svg>`, bg: '#e3f2fd' },
+    { id: 'sleek',    name: 'Dolphin Tracker Sleek', icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#b07d2a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="7" width="12" height="15" rx="1"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>`, bg: '#fff8e1' },
+    { id: 'rex',      name: 'Dolphin Tracker Rex', icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f7a72" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="14" r="3"/><circle cx="18" cy="14" r="3"/><path d="M9 14h6"/></svg>`, bg: '#e0f7f4' },
+    { id: 'genie',    name: 'Genie Track Collar',  icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#9d2a72" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.703 1.725 1.722 3.656 1 1.261-.472 1.96-1.45 2.344-2.5"/><path d="M14.267 5.172c0-1.39 1.577-2.493 3.5-2.172 2.823.47 4.113 6.006 4 7-.08.703-1.725 1.722-3.656 1-1.261-.472-1.96-1.45-2.344-2.5"/></svg>`, bg: '#fce4ec' },
     { id: 'travel',   name: 'Travel Kit',          icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5b2da8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 9a3 3 0 0 1 0 6v2a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-2a3 3 0 0 1 0-6V7a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2z"/></svg>`, bg: '#ede7f6' },
     { id: 'home',     name: 'Home Security Kit',   icon: `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1a7a3a" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>`, bg: '#e8f5e9' },
   ];
